@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Weer Vandaag";
+}
+
+<div class="weer-container">
+    <div class="weer-text">
+        <h1>@ViewData["KorteBroek"]</h1>
+        <p><strong>Temperatuur:</strong> @ViewData["Temperatuur"] °C</p>
+        <p><strong>Regenkans:</strong> @ViewData["RegenKans"] %</p>
+        <p class="weer-emoji">
+            @(ViewData["KorteBroek"].ToString().Contains("Ja") ? "☀️" : "🌧️")
+        </p>
+    </div>
+</div>
+
+<style>
+    .weer-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .weer-text {
+        flex: 1 1 300px;
+    }
+
+        .weer-text h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+    .weer-emoji {
+        font-size: 4rem;
+        margin-top: 20px;
+    }
+
+
+    }
+</style>
